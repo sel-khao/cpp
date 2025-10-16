@@ -1,1 +1,7 @@
-C = -Wall -Werror -Wextra -std=c++98
+name = Phonebook
+
+C = c++;
+
+CFLAGS = -Wall -Werror -Wextra -std=c++98
+
+

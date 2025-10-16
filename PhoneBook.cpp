@@ -7,20 +7,18 @@ int main(int argc, char **argv)
     std::string input;
     while (1)
     {
-        std::cout << "test: ";
-        std::getline(std::cin,input);
+        std::cout << "🕻 My Phonebook: ";
+        std::getline(std::cin, input);
 
         if (input == "ADD"){
             phonebook.add();
         }
         else if (input == "SEARCH")
         {
-            std::cout << "search";
+            phonebook.search();
         }
         else if (input == "EXIT"){
-            return ;
+            return 0;
         }
-        else
-            std::cout << "available commands are ADD SEARCH EXIT\n";
     }
 }
