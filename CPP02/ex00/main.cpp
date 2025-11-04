@@ -5,37 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 13:05:17 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/10/16 14:07:53 by sel-khao         ###   ########.fr       */
+/*   Created: 2025/11/04 17:50:29 by sel-khao          #+#    #+#             */
+/*   Updated: 2025/11/04 17:54:05 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Fixed.hpp"
 
 int main()
 {
-    Phonebook phonebook;
+    Fixed a;
+    Fixed b(a);
+    Fixed c;
 
-    std::string input;
-    while (1)
-    {
-        std::cout << "🕻 My Phonebook: ";
-        if (!std::getline(std::cin, input))
-        {
-            std::cout << std::endl;
-            return 1;
-        }
-        if (input == "ADD"){
-            if (phonebook.add() == 1)
-                return 1;
-        }
-        else if (input == "SEARCH")
-        {
-            if (phonebook.search() == 1)
-                return 1;
-        }
-        else if (input == "EXIT"){
-            return 0;
-        }
-    }
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return 0;
 }
