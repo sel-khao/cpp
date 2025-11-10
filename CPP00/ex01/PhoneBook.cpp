@@ -6,18 +6,19 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:58:11 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/10/16 16:44:53 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/10 16:31:14 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void Phonebook::init(){
-            for(int a = 0; a < 8; a++)
-            contact[a].PhoneNumber = "\n";
-        }
+PhoneBook::PhoneBook() {
+    contactNumbers = 0;
+}
 
-void Phonebook::count(std::string str){
+PhoneBook::~PhoneBook(){};
+
+void PhoneBook::count(std::string str){
     if (str.size() < 10) {
         for (int n = str.size(); n < 10; n++) {
             std::cout << " ";
@@ -36,66 +37,66 @@ void Phonebook::count(std::string str){
        std::cout << str;
 }
 
-int Phonebook::add(){
+int PhoneBook::add(){
     if (contactNumbers > 7)
         contactNumbers = 0;
     std::string input;
     std::cout << "› First Name : ";
     if (!std::getline(std::cin, input))
         return 1;
-    if (input == "") {
+    if (input.empty()) {
         std::cout << "invalid, try again\n";
         return 0;
     }
-    contact[contactNumbers].FirstName = input;
+    contact[contactNumbers].SetFirstName(input);
     std::cout << "› Last Name : ";
     if (!std::getline(std::cin, input))
         return 1;
-    if (input == "") {
+    if (input.empty()) {
         std::cout << "invalid, try again\n";
         return 0;
     }
-    contact[contactNumbers].LastName = input;
+    contact[contactNumbers].SetLastName(input);
     std::cout << "› Nickname : ";
     if (!std::getline(std::cin, input))
         return 1;
-    if (input == "") {
+    if (input.empty()) {
         std::cout << "invalid, try again\n";
         return 0;
     }
-    contact[contactNumbers].Nickname = input;
+    contact[contactNumbers].SetNickName(input);
     std::cout << "› Phone Number : ";
     if (!std::getline(std::cin, input))
         return 1;
-    if (input == "") {
+    if (input.empty()) {
         std::cout << "invalid, try again\n";
         return 0;
     }
-    contact[contactNumbers].PhoneNumber = input;
+    contact[contactNumbers].SetPhoneNumber(input);
     std::cout << "› Darkest Secret : ";
     if (!std::getline(std::cin, input))
         return 1;
-    if (input == ""){
+    if (input.empty()){
         std::cout << "invalid, try again\n";
         return 0;
     }
-    contact[contactNumbers].DarkestSecret = input;
+    contact[contactNumbers].SetDarkestSecret(input);
     contactNumbers++;
     return 0;
 }
 
-int Phonebook::search()
+int PhoneBook::search()
 {
-    std::cout << "|    index| firstname|  lastname|  nickname|" << std::endl;
+    std::cout << "|     index| firstname|  lastname|  nickname|" << std::endl;
     for (int j = 0; j < 8; j++) {
-        if (contact[j].PhoneNumber.empty())
+        if (contact[j].GetPhoneNumber().empty())
             continue;
-        std::cout << "         " << j << "|";
-        count(contact[j].FirstName);
+        std::cout << "|         " << j << "|";
+        count(contact[j].GetFirstName());
         std::cout << "|";
-        count(contact[j].LastName);
+        count(contact[j].GetLastName());
         std::cout << "|";
-        count(contact[j].Nickname);
+        count(contact[j].GetNickName());
         std::cout << "|";
         std::cout << std::endl;
     }
@@ -103,17 +104,19 @@ int Phonebook::search()
     std::string input;
     if (!std::getline(std::cin, input))
         return 1;
-    int n = atoi(input.c_str());
-    if (n > 7  || n < 0 || contact[n].PhoneNumber.empty()) {
+    if (input.empty() || input.length() != 1 || input[0] < '0' || input[0] > '7') {
         std::cout << "non existing\n";
         return 0;
     }
-    std::cout << "First Name: " << contact[n].FirstName << std::endl;
-    std::cout << "Last Name: " << contact[n].LastName << std::endl;
-    std::cout << "Nickname: " << contact[n].Nickname << std::endl;
-    std::cout << "Phone Number: " << contact[n].PhoneNumber << std::endl;
-    std::cout << "Darkest Secret: " << contact[n].DarkestSecret << std::endl;
+    int n = input[0] - '0';
+    if (contact[n]. GetPhoneNumber().empty()) {
+        std::cout << "non existing\n";
+        return 0;
+    }
+    std::cout << "First Name: " << contact[n].GetFirstName() << std::endl;
+    std::cout << "Last Name: " << contact[n].GetLastName() << std::endl;
+    std::cout << "Nickname: " << contact[n].GetNickName() << std::endl;
+    std::cout << "Phone Number: " << contact[n].GetPhoneNumber() << std::endl;
+    std::cout << "Darkest Secret: " << contact[n].GetDarkestSecret() << std::endl;
     return 0;
 }
-
-

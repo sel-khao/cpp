@@ -1,17 +1,22 @@
 NAME = PhoneBook
 
-C = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
+SRC = PhoneBook.cpp main.cpp Contact.cpp
 
 all: $(NAME)
 
-$(NAME): PhoneBook.cpp main.cpp
-	$(C) $(CFLAGS) -o $(NAME) PhoneBook.cpp main.cpp
+$(NAME): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRC)
 
 clean:
-	rm -f $(NAME)
+	@echo "no object file to clean"
 
 fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

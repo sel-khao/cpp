@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sara <sara@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 15:48:21 by sara              #+#    #+#             */
-/*   Updated: 2025/10/21 15:58:14 by sara             ###   ########.fr       */
+/*   Updated: 2025/11/07 18:53:58 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
     randomChump("sara");
-    Zombie *wassim = newZombie("Wassim");
+    Zombie *wassim = newZombie("wassim");
     wassim->announce();
     delete wassim;
     return 0;

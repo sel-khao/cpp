@@ -1,16 +1,22 @@
 NAME = megaphone
 
-C = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = c++
+
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
+SRC = megaphone.cpp
 
 all: $(NAME)
 
-$(NAME): megaphone.cpp
-	$(C) $(CFLAGS) -o $(NAME) megaphone.cpp
+$(NAME): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRC)
 
 clean:
-	rm -f $(NAME)
+	@echo "no object file to clean"
 
 fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

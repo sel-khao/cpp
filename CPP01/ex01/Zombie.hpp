@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/10 18:26:51 by sel-khao          #+#    #+#             */
+/*   Updated: 2025/11/10 18:26:59 by sel-khao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
@@ -9,17 +21,10 @@ class Zombie {
     private:
         std::string name;
     public:
-        Zombie() {}
-        Zombie(std::string zombieName) : name(zombieName) {}
-        ~Zombie() {
-            std::cout << name << " is destroyed" << std::endl;
-        }
-        void announce() {
-            std::cout << name <<": BraiiiiiiinnnzzzZ\n";
-        }
-        void setName(std::string newName){
-            name = newName;
-        }
+        Zombie();
+        ~Zombie();
+        void announce();
+        void setName(std::string newName);
 };
 
 Zombie* newZombie(std::string name);

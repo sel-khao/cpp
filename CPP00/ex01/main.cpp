@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 13:05:17 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/10/16 14:07:53 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/10 16:31:08 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-    Phonebook phonebook;
+    PhoneBook phonebook;
 
     std::string input;
     while (1)

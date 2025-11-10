@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sara <sara@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 15:19:02 by sara              #+#    #+#             */
-/*   Updated: 2025/10/21 15:46:52 by sara             ###   ########.fr       */
+/*   Updated: 2025/11/10 18:16:17 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,13 @@
 #include <cstdlib>
 #include <iostream>
 
-
 class Zombie {
     private:
         std::string name;
     public:
         Zombie(std::string zombieName) : name(zombieName) {}
-        ~Zombie() {
-            std::cout << name << " is destroyed" << std::endl;
-        }
-        void announce() {
-            std::cout << name <<": BraiiiiiiinnnzzzZ\n";
-        }
+        ~Zombie();
+        void announce();
 };
 
 Zombie* newZombie(std::string name);
