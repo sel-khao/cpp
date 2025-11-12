@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:58:11 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/10 16:31:14 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/11 18:14:59 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int PhoneBook::search()
         return 0;
     }
     int n = input[0] - '0';
-    if (contact[n]. GetPhoneNumber().empty()) {
+    if (contact[n].GetPhoneNumber().empty()) {
         std::cout << "non existing\n";
         return 0;
     }
