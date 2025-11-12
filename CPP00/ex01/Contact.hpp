@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 14:04:46 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/11 18:15:50 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/12 13:40:40 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define CONTACT_HPP
 
 #include <iostream>
-#include <cstdlib>
 #include <string>
 
 class Contact {
