@@ -6,11 +6,13 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:54:17 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/12 15:45:36 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:33:38 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {

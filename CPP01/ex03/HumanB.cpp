@@ -6,15 +6,22 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:54:06 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/12 16:02:33 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:34:56 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "HumanB.hpp"
 
-void HumanB::attack(){
-    if (HumanB::weapon)
-        std::cout << name << " attacks with their " << weapon.getType() << std::endl;    
+HumanB::HumanB(const std::string& humanName) : weapon(NULL), name(humanName){};
+HumanB::~HumanB() {};
+
+void HumanB::attack() {
+    if (weapon)
+        std::cout << name << " attacks with their " << weapon->getType() << std::endl;    
     else
-        return ;
+        std::cout << name << " has no weapon" << std::endl;
+}
+
+void HumanB::setWeapon(Weapon& w){
+    weapon = &w;//salvo indirizzo dell'arma
 }

@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 13:56:25 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/13 16:34:39 by sel-khao         ###   ########.fr       */
+/*   Created: 2025/11/13 16:44:36 by sel-khao          #+#    #+#             */
+/*   Updated: 2025/11/13 17:20:36 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
-
+#include <cctype>
 #include <string>
-#include <iostream>
-#include "Weapon.hpp"
 
-class HumanB {
-    private:
-        Weapon* weapon;
-        std::string name;
-    public:
-        HumanB(const std::string& humanName);
-        ~HumanB();
-        void setWeapon(Weapon& w);
-        void attack();
-};
-
-#endif
+int main(int argc, char **argv)
+{
+    int i = 0;
+    if (argc != 4)
+        return 0;
+    std::string str1 = argv[2];
+    std::string str2 = argv[3];
+    
+}
