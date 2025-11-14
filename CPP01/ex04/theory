@@ -1,0 +1,42 @@
+/*
+
+ifstream and ofstream are classes that handle input and output
+file operations.
+part of std library, defined in fstream library.
+
+std::ifstream(input file stream) //used for reading data from a file.
+
+.used to open and read the file just like cin from the console.
+the file must exist for ifstream to work, typically opened in READ mode.
+
+std::ofstream(output file stream) //used for writing data to a file
+
+.used to create files and write data into them, if file ady exists it usually
+overwrites them, depending on the mode. if file doesnt exist, it creates it.
+i can write data in file same as cout
+
+------------------------------------------------------------------------------
+
+std::string uses dynamic allocation internally (with new)
+When you do +=, it checks: "Do I have enough space? No? Let me allocate more"
+When the variable goes out of scope, the destructor calls delete automatically
+
+called RAII (Resource Acquisition Is Initialization)
+
+
+
+std::string is a class that wraps dynamic memory and manages it for you:
+cppstd::string result = "";
+
+// Behind the scenes:
+// - Constructor allocates a small buffer on the heap
+// - Keeps track of: current size, capacity, pointer to data
+
+result += "some text";
+
+// Behind the scenes:
+// - Checks: do I have space?
+// - If NO: allocate bigger buffer, copy old data, free old buffer
+// - If YES: just append
+// - You see none of this!
+*/
