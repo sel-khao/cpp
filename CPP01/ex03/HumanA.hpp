@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:56:11 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/13 16:22:19 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/14 19:14:04 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 class HumanA {
     private:
-        Weapon& weapon;
         std::string name;
+        Weapon& weapon;
     public:
         HumanA(const std::string& n, Weapon& w);
         ~HumanA();

@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 15:19:02 by sara              #+#    #+#             */
-/*   Updated: 2025/11/12 13:30:27 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:23:09 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Zombie {
     public:
         Zombie(std::string ZombieName);
         ~Zombie();
-        void announce() const;
+        void announce();
 };
 
-Zombie* newZombie(const std::string& name);
-void randomChump(const std::string& name);
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 18:23:01 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/12 13:36:45 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/14 19:09:31 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Zombie::~Zombie() {
     std::cout << name << " is destroyed" << std::endl;
 }
 
-void Zombie::announce() const {
+void Zombie::announce() {
     std::cout << name << ": BraiiiiiiinnnzzzZ...\n";
 }
 

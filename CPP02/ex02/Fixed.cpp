@@ -5,13 +5,59 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 18:46:30 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/15 18:58:30 by sel-khao         ###   ########.fr       */
+/*   Created: 2025/11/15 19:02:37 by sel-khao          #+#    #+#             */
+/*   Updated: 2025/11/15 19:48:30 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+Fixed Fixed::operator + (const Fixed& other) const{//others is object fixed, not int
+    Fixed result;
+    result.setRawBits(fixed + other.fixed);
+    return (result);
+}
+
+Fixed Fixed::operator - (const Fixed& other) const{
+    Fixed result;
+    result.setRawBits(fixed - other.fixed);
+    return (result);
+}
+
+Fixed Fixed::operator * (const Fixed& other) const{
+    
+}
+Fixed Fixed::operator / (const Fixed& other) const{
+    
+}
+
+
+//compares two int, with cout 1 for true, 0 for false by default
+bool Fixed::operator > (const Fixed& other) const{
+    return fixed > other.fixed;
+}
+
+bool Fixed::operator < (const Fixed& other) const{
+    return fixed < other.fixed;
+}
+
+bool Fixed::operator >= (const Fixed& other) const{
+    return fixed >= other.fixed;   
+}
+
+bool Fixed::operator <= (const Fixed& other) const{
+    return fixed <= other.fixed;    
+}
+
+bool Fixed::operator == (const Fixed& other) const{
+    return fixed == other.fixed;    
+}
+
+bool Fixed::operator != (const Fixed& other) const{
+    return fixed != other.fixed;    
+}
+
+//------------------------------------------------------------------------------
 std::ostream& operator << (std::ostream &out, const Fixed &f){
     out << f.toFloat();
     return out;
@@ -53,4 +99,14 @@ Fixed& Fixed::operator = (const Fixed& other){
 
 Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
+}
+
+int Fixed::getRawBits(void) const {
+    std::cout << "getRawBits member function called" << std::endl;
+    return fixed;
+}
+
+void Fixed::setRawBits(int const raw) {
+    std::cout << "setRawBits member function called" << std::endl;
+    fixed = raw;
 }

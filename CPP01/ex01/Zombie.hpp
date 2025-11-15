@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 18:26:51 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/12 13:46:56 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/14 19:10:35 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ class Zombie {
     public:
         Zombie();
         ~Zombie();
-        void announce() const;
+        void announce();
         void setName(const std::string& newName);
 };
 
-Zombie* zombieHorde(int N, const std::string& name);
+Zombie* zombieHorde(int N, std::string name);
 
 #endif

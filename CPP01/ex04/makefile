@@ -1,21 +1,22 @@
-CXX = c++
-
 NAME = main
+
+CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp 
-OBJS = $(SRCS:.cpp=.o)
+SRC = main.cpp
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRC)
 
 clean:
-	rm -f $(OBJS)
+	@echo "no object file to clean"
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
