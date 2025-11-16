@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sara <sara@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 19:02:08 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/15 19:04:21 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/16 15:59:36 by sara             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int main( void )
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
+
 	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+
+	std::cout << Fixed::max(a , b) << std::endl;
 	return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sara <sara@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 19:02:35 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/15 19:28:50 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/16 16:04:55 by sara             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,24 @@ class Fixed {
 
         float toFloat(void) const;
         int toInt( void ) const;
-//confronti, si o no
         bool operator > (const Fixed& other) const;
 		bool operator < (const Fixed& other) const;
 		bool operator >= (const Fixed& other) const;
 		bool operator <= (const Fixed& other) const;
 		bool operator == (const Fixed& other) const;
 		bool operator != (const Fixed& other) const;
-//operazioni
+        static const Fixed& min(const Fixed& one, const Fixed& two);
+        static Fixed& min(Fixed& one, Fixed& two);
+        static const Fixed& max(const Fixed& one, const Fixed& two);
+        static Fixed& max(Fixed& one, Fixed& two);
 		Fixed operator + (const Fixed& other) const;
 		Fixed operator - (const Fixed& other) const;
 		Fixed operator * (const Fixed& other) const;
 		Fixed operator / (const Fixed& other) const;
+        Fixed& operator -- ();
+        Fixed operator -- (int);
+        Fixed& operator ++ ();
+        Fixed operator ++ (int);
 };
 
 std::ostream& operator << (std::ostream &out, const Fixed &f);

@@ -3,16 +3,62 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sara <sara@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 19:02:37 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/15 19:48:30 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/16 16:06:33 by sara             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed Fixed::operator + (const Fixed& other) const{//others is object fixed, not int
+const Fixed& Fixed::min(const Fixed& one, const Fixed& two){
+    if (one < two)
+        return one;
+    return two;
+}
+
+Fixed& Fixed::min(Fixed& one, Fixed& two){
+    if (one < two)
+        return one;
+    return two;
+}
+
+const Fixed& Fixed::max(const Fixed& one, const Fixed& two){
+    if (one > two)
+        return one;
+    return two;
+}
+
+Fixed& Fixed::max(Fixed& one, Fixed& two){
+    if (one > two)
+        return one;
+    return two; 
+}
+
+Fixed Fixed::operator -- (int){
+    Fixed temp = *this;
+    fixed--;
+    return (temp);
+}
+
+Fixed& Fixed::operator -- (){
+    fixed--;//incrementa il raw value
+    return *this;
+}
+
+Fixed Fixed::operator ++ (int){
+    Fixed temp = *this;
+    fixed++;
+    return temp;
+}
+
+Fixed& Fixed::operator ++ (){
+    fixed++;//incrementa il raw value
+    return *this;
+}
+
+Fixed Fixed::operator + (const Fixed& other) const{
     Fixed result;
     result.setRawBits(fixed + other.fixed);
     return (result);
@@ -24,13 +70,17 @@ Fixed Fixed::operator - (const Fixed& other) const{
     return (result);
 }
 
-Fixed Fixed::operator * (const Fixed& other) const{
-    
-}
-Fixed Fixed::operator / (const Fixed& other) const{
-    
+Fixed Fixed::operator * (const Fixed& other) const {
+    Fixed result;
+    result.setRawBits((fixed * other.fixed) >> fraction);
+    return (result);
 }
 
+Fixed Fixed::operator / (const Fixed& other) const {
+    Fixed result;
+    result.setRawBits((fixed << fraction) / other.fixed);
+    return (result);
+}
 
 //compares two int, with cout 1 for true, 0 for false by default
 bool Fixed::operator > (const Fixed& other) const{
@@ -57,7 +107,6 @@ bool Fixed::operator != (const Fixed& other) const{
     return fixed != other.fixed;    
 }
 
-//------------------------------------------------------------------------------
 std::ostream& operator << (std::ostream &out, const Fixed &f){
     out << f.toFloat();
     return out;
@@ -102,11 +151,9 @@ Fixed::~Fixed() {
 }
 
 int Fixed::getRawBits(void) const {
-    std::cout << "getRawBits member function called" << std::endl;
     return fixed;
 }
 
 void Fixed::setRawBits(int const raw) {
-    std::cout << "setRawBits member function called" << std::endl;
     fixed = raw;
 }
