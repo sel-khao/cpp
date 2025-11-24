@@ -6,24 +6,32 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:34:09 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/24 10:44:07 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:57:42 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-int main(void)
-{
-    ClapTrap fault;
-    ClapTrap one("sara");
-    ClapTrap two("vale");
-    ClapTrap a;
-    ClapTrap b;
+int main(){
+    std::cout << "=== CREATING FRAGTRAP ===" << std::endl;
+    FragTrap sara("sara");
+    std::cout << std::endl;
+
+    std::cout << "=== TESTING ABILITIES ===" << std::endl;
+    sara.attack("sithmi");
+    sara.takeDamage(5);
+    sara.beRepaired(3);
+    sara.highFivesGuys();
+    std::cout << std::endl;
+
+    std::cout << "=== TESTING DEATH ===" << std::endl;
+    FragTrap boom("boom");
+    boom.attack("target");
+    boom.takeDamage(100);
+    boom.attack("somene");
+    boom.beRepaired(10);
+    std::cout << std::endl;
     
-    a = one;
-    b = two;
-    one.attack("someone");
-    one.takeDamage(11);
-    one.beRepaired(6);
+    std::cout << "=== DESTRUCTION ===" << std::endl;
     return 0;
 }

@@ -3,27 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sara <sara@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 13:34:09 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/24 10:44:07 by sel-khao         ###   ########.fr       */
+/*   Created: 2025/11/15 19:02:08 by sel-khao          #+#    #+#             */
+/*   Updated: 2025/11/16 15:59:36 by sara             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Fixed.hpp"
 
-int main(void)
+int main( void )
 {
-    ClapTrap fault;
-    ClapTrap one("sara");
-    ClapTrap two("vale");
-    ClapTrap a;
-    ClapTrap b;
-    
-    a = one;
-    b = two;
-    one.attack("someone");
-    one.takeDamage(11);
-    one.beRepaired(6);
-    return 0;
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+
+	std::cout << b << std::endl;
+
+	std::cout << Fixed::max(a , b) << std::endl;
+	return 0;
 }

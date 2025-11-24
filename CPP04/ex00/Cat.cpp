@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 13:34:09 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/24 10:44:07 by sel-khao         ###   ########.fr       */
+/*   Created: 2025/11/24 15:32:35 by sel-khao          #+#    #+#             */
+/*   Updated: 2025/11/24 15:33:04 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Cat.hpp"
 
-int main(void)
-{
-    ClapTrap fault;
-    ClapTrap one("sara");
-    ClapTrap two("vale");
-    ClapTrap a;
-    ClapTrap b;
-    
-    a = one;
-    b = two;
-    one.attack("someone");
-    one.takeDamage(11);
-    one.beRepaired(6);
-    return 0;
+Cat::Cat() {
+    std::cout << "Cat " << type << " constructor called" << std::endl;
+}
+
+Cat::~Cat() {
+    std::cout << "Cat " << type << " destructor called" << std::endl;
 }

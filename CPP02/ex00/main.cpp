@@ -5,25 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 13:34:09 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/24 10:44:07 by sel-khao         ###   ########.fr       */
+/*   Created: 2025/11/04 17:50:29 by sel-khao          #+#    #+#             */
+/*   Updated: 2025/11/15 15:14:16 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Fixed.hpp"
 
-int main(void)
+int main()
 {
-    ClapTrap fault;
-    ClapTrap one("sara");
-    ClapTrap two("vale");
-    ClapTrap a;
-    ClapTrap b;
-    
-    a = one;
-    b = two;
-    one.attack("someone");
-    one.takeDamage(11);
-    one.beRepaired(6);
+    Fixed a;
+    Fixed b(a);
+    Fixed c;
+
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
     return 0;
 }

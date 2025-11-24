@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 13:34:09 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/24 10:44:07 by sel-khao         ###   ########.fr       */
+/*   Created: 2025/11/24 15:21:34 by sel-khao          #+#    #+#             */
+/*   Updated: 2025/11/24 15:30:36 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Dog.hpp"
 
-int main(void)
-{
-    ClapTrap fault;
-    ClapTrap one("sara");
-    ClapTrap two("vale");
-    ClapTrap a;
-    ClapTrap b;
-    
-    a = one;
-    b = two;
-    one.attack("someone");
-    one.takeDamage(11);
-    one.beRepaired(6);
-    return 0;
+Dog::Dog() {
+    std::cout << "Dog " << type << " constructor called" << std::endl;
+}
+
+Dog::~Dog() {
+    std::cout << "Dog " << type << " destructor called" << std::endl;
 }

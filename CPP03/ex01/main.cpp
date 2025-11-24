@@ -6,24 +6,30 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:34:09 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/24 10:44:07 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:54:32 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-    ClapTrap fault;
-    ClapTrap one("sara");
-    ClapTrap two("vale");
-    ClapTrap a;
-    ClapTrap b;
+    ScavTrap sara("sara");
+    //ScavTrap guardia("guardiano");
+    std::cout << "\n";
+
+    sara.attack("sithmi");
+    sara.takeDamage(5);
+    sara.beRepaired(3);
+    //guardia.guardGate();
+    std::cout << "\n";
+
+    //test death
+    ScavTrap boom("one");
+    boom.attack("two");
+    boom.takeDamage(100);//dies
+    boom.beRepaired(10);//is dead
+    std::cout << "\n";
     
-    a = one;
-    b = two;
-    one.attack("someone");
-    one.takeDamage(11);
-    one.beRepaired(6);
-    return 0;
+    std::cout << "\n";
 }
