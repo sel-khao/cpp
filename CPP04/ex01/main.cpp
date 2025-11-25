@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 15:31:35 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/25 20:04:50 by sel-khao         ###   ########.fr       */
+/*   Created: 2025/11/24 15:16:55 by sel-khao          #+#    #+#             */
+/*   Updated: 2025/11/25 21:34:36 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
-
-#include <string>
-#include <iostream>
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Brain.cpp"
 
-class Cat : public Animal {
-    public:
-        Cat();
-        ~Cat();
-        Cat(const Cat &other);
-        Cat& operator = (const Cat &other);
-
-        void makeSound() const;
-};
-
-#endif
+int main()
+{
+    
+    return 0;
+}

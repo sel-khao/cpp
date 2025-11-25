@@ -6,29 +6,35 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:21:34 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/25 20:06:02 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/25 21:14:07 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog(const Dog& other) : Animal(other){
+    brain = new Brain(*other.brain);
     std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog& Dog::operator = (const Dog& other){
-    if (this != &other)
-        type = other.type;
+    if (this != &other){
+        Animal::operator=(other);//opy animal part
+        delete brain;
+        brain = new Brain(*other.brain);
+    }
     return *this;
 }
 
 Dog::Dog() {
     type = "Dog";
+    brain = new Brain();
     std::cout << "Dog constructor has been called" << std::endl;
 }
 
 Dog::~Dog() {
     std::cout << "Dog destructor has been called" << std::endl;
+    delete(brain);
 }
 
 void Dog::makeSound() const{

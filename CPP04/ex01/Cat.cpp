@@ -6,29 +6,35 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:32:35 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/25 20:05:53 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/25 21:14:21 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat(const Cat& other) : Animal(other){
+    brain = new Brain(*other.brain);
     std::cout << "Copy constructor called" << std::endl;
 }
 
 Cat& Cat::operator = (const Cat& other){
-    if (this != &other)
-        type = other.type;
+    if (this != &other){
+        Animal::operator=(other);//opy animal part
+        delete brain;
+        brain = new Brain(*other.brain);
+    }
     return *this;
 }
 
 Cat::Cat() {
     type = "Cat";
+    brain = new Brain();
     std::cout << type << " constructor has been called" << std::endl;
 }
 
 Cat::~Cat() {
     std::cout << type << " destructor has been called" << std::endl;
+    delete(brain);
 }
 
 void Cat::makeSound() const{
