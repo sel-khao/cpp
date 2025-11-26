@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sara <sara@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:32:35 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/25 21:14:21 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/26 10:00:34 by sara             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat(const Cat& other) : Animal(other){
     brain = new Brain(*other.brain);
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat& Cat::operator = (const Cat& other){

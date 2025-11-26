@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sara <sara@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 19:48:28 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/25 21:21:04 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/26 10:00:53 by sara             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat(){
-    type = "WrongCAt";
+    type = "WrongCat";
     std::cout << "WrongCat default constructor called" << std::endl;
 }
 
