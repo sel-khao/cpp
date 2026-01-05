@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 15:31:35 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/27 11:50:27 by sel-khao         ###   ########.fr       */
+/*   Created: 2025/11/25 19:47:14 by sel-khao          #+#    #+#             */
+/*   Updated: 2025/11/25 20:03:46 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
+#include "WrongAnimal.hpp"
 #include <string>
 #include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Cat : public Animal {
-    private:
-        Brain* brain;
+class WrongCat : public WrongAnimal {
     public:
-        Cat();
-        ~Cat();
-        Cat(const Cat &other);
-        Cat& operator = (const Cat &other);
+        WrongCat();
+        ~WrongCat();
+        WrongCat (const WrongCat& other);
+        WrongCat& operator=(const WrongCat& other);
 
         void makeSound() const;
-        Brain* getBrain() const;
 };
 
 #endif

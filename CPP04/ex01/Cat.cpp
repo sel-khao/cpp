@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sara <sara@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:32:35 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/26 10:00:34 by sara             ###   ########.fr       */
+/*   Updated: 2025/11/27 12:14:21 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Cat::Cat(const Cat& other) : Animal(other){
 }
 
 Cat& Cat::operator = (const Cat& other){
+    std::cout << "Cat copy assignment has been called" << std::endl;
     if (this != &other){
         Animal::operator=(other);//opy animal part
         delete brain;
@@ -41,3 +42,6 @@ void Cat::makeSound() const{
     std::cout << "meow! meow!" << std::endl;
 }
 
+Brain* Cat::getBrain() const{
+    return brain;
+}

@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 19:48:28 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/25 20:23:11 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/27 10:42:19 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,4 @@ WrongCat& WrongCat::operator=(const WrongCat& other){
     if (this != &other)
         type = other.type;
     return *this;
-}
-
-void WrongCat::makeSound() const{
-    std::cout << "Wrong meow meow" << std::endl;
 }

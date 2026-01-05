@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 15:31:35 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/27 11:50:27 by sel-khao         ###   ########.fr       */
+/*   Created: 2025/12/09 19:36:11 by sel-khao          #+#    #+#             */
+/*   Updated: 2025/12/09 19:44:02 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
-#include <string>
+#include <string.h>
 #include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Cat : public Animal {
+class Form {
     private:
-        Brain* brain;
+        const std::string name;
+        //boolean 
+        const int grade;
+        const int exec;
     public:
-        Cat();
-        ~Cat();
-        Cat(const Cat &other);
-        Cat& operator = (const Cat &other);
 
-        void makeSound() const;
-        Brain* getBrain() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:19:16 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/25 20:48:26 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/27 11:50:59 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Dog : public Animal {
         Dog& operator=(const Dog& other);
 
         void makeSound() const;
+        Brain* getBrain() const;
 };
 
 #endif

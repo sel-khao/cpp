@@ -6,13 +6,13 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:17:25 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/27 12:44:26 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:58:45 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() : type("Animal"){
+Animal::Animal() : type("idk"){
     std::cout << "Animal default constructor called" << std::endl;
 }
 
@@ -38,6 +38,6 @@ std::string Animal::getType() const{
 }
 
 void Animal::makeSound() const {
-    std::cout << "Animal is making a sound" << std::endl;
+    std::cout << "Animal " << type << " is making a sound" << std::endl;
 }
 

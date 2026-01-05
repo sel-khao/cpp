@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 19:37:04 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/25 20:16:42 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/27 10:54:22 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type){
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other){
+    std::cout << "WrongAnimal copy assignment called" << std::endl;
     if (this != &other)
         type = other.type;
     return *this;

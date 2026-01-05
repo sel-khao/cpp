@@ -6,32 +6,42 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:21:34 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/27 11:00:42 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:52:43 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog(const Dog& other) : Animal(other){
-    std::cout << "Dog copy constructor has been called" << std::endl;
+    brain = new Brain(*other.brain);
+    std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog& Dog::operator = (const Dog& other){
     std::cout << "Dog copy assignment has been called" << std::endl;
-    if (this != &other)
-        Animal::operator=(other);
+    if (this != &other){
+        Animal::operator=(other);//opy animal part
+        delete brain;
+        brain = new Brain(*other.brain);
+    }
     return *this;
 }
 
 Dog::Dog() {
     type = "Dog";
-    std::cout << type << " constructor has been called" << std::endl;
+    brain = new Brain();
+    std::cout << "Dog constructor has been called" << std::endl;
 }
 
 Dog::~Dog() {
-    std::cout << type << " destructor has been called" << std::endl;
+    std::cout << "Dog destructor has been called" << std::endl;
+    delete(brain);
 }
 
 void Dog::makeSound() const{
     std::cout << "bao! bao!" << std::endl;
+}
+
+Brain* Dog::getBrain() const{
+    return brain;
 }

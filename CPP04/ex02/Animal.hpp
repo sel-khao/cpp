@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:17:32 by sel-khao          #+#    #+#             */
-/*   Updated: 2025/11/27 11:55:30 by sel-khao         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:44:14 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Animal {
         Animal& operator = (const Animal &other);
         Animal (const std::string& type);
         std::string getType() const;
-        virtual void makeSound() const ;
+        virtual void makeSound() const = 0;
 };
 
 #endif
