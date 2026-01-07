@@ -1,33 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 19:36:11 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/01/07 16:33:18 by sel-khao         ###   ########.fr       */
+/*   Created: 2026/01/07 15:45:25 by sel-khao          #+#    #+#             */
+/*   Updated: 2026/01/07 15:45:26 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
-
-#include "Bureaucrat.hpp"
-#include <stdbool.h>
-#include <string.h>
-#include <iostream>
-
-class Form {
-    private:
-        const std::string name;
-        bool isSigned;
-        const int grade;
-        const int execute;
-    public:
-        void beSigned(const Bureaucrat);
-};
-
-void Form::beSigned(const Bureaucrat){};
-
-#endif

@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:10:59 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/01/07 13:49:59 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/01/07 16:34:43 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ class Bureaucrat
 			public:
 				const char* what() const throw();
 		};
+		void signForm();
 };
-		
+
 std::ostream& operator<<(std::ostream &os, const Bureaucrat& bureaucrat);
 
 #endif

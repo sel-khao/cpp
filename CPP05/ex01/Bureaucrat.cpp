@@ -6,11 +6,18 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:10:34 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/01/07 15:16:13 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/01/07 16:49:22 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+
+void Bureaucrat::signForm(){
+	//Form::beSigned(Bureaucrat one);
+	//std::cout << bure << " signed " << Form << std::endl;
+	
+};
 
 void Bureaucrat::increment(){
 	if (grade == 1)
