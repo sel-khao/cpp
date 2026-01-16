@@ -6,56 +6,53 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:12:22 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/01/13 10:20:51 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/01/14 15:44:53 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
-    Bureaucrat four;
-    std::cout << four << std::endl;
 //correct
-	try{
-        Bureaucrat one("gianni", 150);
-        std::cout << one;
-        one.increment();
-        std::cout << "gianni just got promoted" << std::endl;
-        std::cout << one;
-        std::cout << "gianni made a mistake so.." << std::endl;
-        one.decrement();
-        std::cout << one << std::endl;
+    Bureaucrat mimi("mimi", 1);
+    Form form1("contratto", 5, 1);
+    std::cout << mimi;
+    std::cout << form1;
+    mimi.signForm(form1);
+//correct
+    try{
+        Bureaucrat sara("sara", 2);
+        Form form3("form3", 10, 5);
+        std::cout << sara << std::endl;
+        std::cout << form3 << std::endl;
+        sara.signForm(form3);
+        std::cout << form3 << std::endl;
     }
     catch(std::exception& e){
-        std::cout << "exception caught: " << e.what() << std::endl;
+        std::cout << "caught: " << e.what();
     }
 //wrong
+    std::cout << std::endl;
     try{
-        Bureaucrat two("mimi", 2);
-        std::cout << two;
-        two.increment();
-        std::cout << two;
-        std::cout << "mimi got promoted again!" << std::endl;
-        two.increment();
-        std::cout << two << std::endl;    
+        Form wrong("no", 0, 30);//0 is invalid
+        std::cout << wrong << std::endl;   
     }
-    catch(Bureaucrat::GradeTooHighException& e){
-        std::cout << e.what() << std::endl;
+    catch(std::exception& e){
+        std::cout << "Eccezione catturata: " << e.what();
     }
-    catch(Bureaucrat::GradeTooLowException& e){
-        std::cout << e.what() << std::endl;
-    }
-
+    std::cout << std::endl;
     try{
-        Bureaucrat three("milo", 0);
-        std::cout << three << std::endl;
+        Bureaucrat bob("bob", 115);
+        Form form2("form2", 20, 150);
+        std::cout << bob;
+        std::cout << form2;
+        bob.signForm(form2);
     }
-    catch(Bureaucrat::GradeTooLowException& e){
-        std::cout << e.what();
+    catch(std::exception& e){
+        std::cout << "caught: " << e.what();
     }
-    catch(Bureaucrat::GradeTooHighException& e){
-        std::cout << e.what();
-    }
+    std::cout << std::endl;
     return 0;
 }

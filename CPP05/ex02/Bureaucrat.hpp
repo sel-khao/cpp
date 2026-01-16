@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:10:59 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/01/14 11:15:22 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/01/15 12:20:47 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include <string>
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -42,7 +42,8 @@ class Bureaucrat
 			public:
 				const char* what() const throw();
 		};
-		void signForm(Form& form);
+		void signForm(AForm& form);
+		void executeForm(AForm const &form) const;
 };
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat& bureaucrat);

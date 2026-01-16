@@ -6,14 +6,25 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:10:34 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/01/14 11:16:21 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/01/15 13:04:32 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
-void Bureaucrat::signForm(Form& form){
+void Bureaucrat::executeForm(AForm const &form) const {
+	try{
+		form.execute(*this);
+		std::cout << getName() << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception& e){
+		std::cout << getName() << " couldn't execute " << form.getName()
+		<< " because " << e.what();
+	}
+}
+
+void Bureaucrat::signForm(AForm& form){
 	try {
 		form.beSigned(*this);
 		std::cout << getName() << " signed " << form.getName() << ".\n";
