@@ -6,14 +6,16 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 15:57:48 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/01/16 13:01:04 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:27:16 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
 
+#include <ctime>
 #include <iostream>
+#include <cstdlib>
 #include <string>
 #include <exception>
 #include "AForm.hpp"

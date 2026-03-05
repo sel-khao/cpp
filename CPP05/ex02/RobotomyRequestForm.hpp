@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:20:18 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/01/16 15:01:38 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:30:50 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include <string>
 #include <exception>
 #include "AForm.hpp"
@@ -26,7 +28,7 @@ class RobotomyRequestForm : public AForm{
     public:
 		RobotomyRequestForm (const RobotomyRequestForm& other);
 		RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
-		//RobotomyRequestForm();
+		RobotomyRequestForm();
 		RobotomyRequestForm(std::string target);
 		~RobotomyRequestForm();
 		const std::string& getTarget() const;

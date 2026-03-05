@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:30:55 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/01/16 15:02:28 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:29:32 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ RobotomyRequestForm::RobotomyRequestForm() : target("target"){}
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
     : AForm(other), target(other.target){}
 
-RobotomyRequestForm RobotomyRequestForm::operator=(const RobotomyRequestForm& other){
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other){
     if (this != &other)
         AForm::operator=(other);
     return *this;
@@ -35,12 +35,16 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target)
 
 RobotomyRequestForm::~RobotomyRequestForm(){
     //std::cout << "RobotomyRequestForm destructor called\n";
-};
+}
 
 const std::string& RobotomyRequestForm::getTarget() const{
     return target;
 }
 void RobotomyRequestForm::executeAction() const{
     std::cout << "Bzzzzz *drilling noises* Zzzzz...\n" << std::endl;
-    
+    bool success = (rand() % 2 == 0);
+    if (success)
+        std::cout << getTarget() << " has been robotomized successfully!\n";
+    else
+        std::cout << "Robotomy on " << getTarget() << " failed.\n";
 }

@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:31:30 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/01/16 14:56:33 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:05:06 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : target("target"){}
 
-ShrubberyCreationForm ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other){
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other){
     if (this != &other)
         AForm::operator=(other);
     return *this;

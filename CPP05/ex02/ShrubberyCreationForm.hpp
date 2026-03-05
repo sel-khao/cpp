@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:24:37 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/01/16 13:29:52 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:05:11 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ShrubberyCreationForm : public AForm{
 	public:
 		const std::string& getTarget() const;
 		ShrubberyCreationForm();
-		ShrubberyCreationForm operator=(const ShrubberyCreationForm& other);
+		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
 		ShrubberyCreationForm(const ShrubberyCreationForm& other);
 		ShrubberyCreationForm(const std::string target);
 		~ShrubberyCreationForm();
