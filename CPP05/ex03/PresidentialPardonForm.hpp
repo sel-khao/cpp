@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/14 15:57:48 by sel-khao          #+#    #+#             */
+/*   Updated: 2026/02/02 16:27:16 by sel-khao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
+
+#include <ctime>
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <exception>
+#include "AForm.hpp"
+
+class PresidentialPardonForm : public AForm{
+    private:
+        const std::string target;
+    protected:
+        void executeAction() const; //virtual void executeAction() const; to override 
+    public:
+        PresidentialPardonForm();
+        PresidentialPardonForm(std::string target);
+        ~PresidentialPardonForm();
+        PresidentialPardonForm& operator=(const PresidentialPardonForm &other);
+        PresidentialPardonForm(const PresidentialPardonForm& other);
+        const std::string& getTarget() const;
+    	class TargetCantBeEmpty : public std::exception{
+		public:
+			const char* what() const throw();
+	};
+};
+
+#endif

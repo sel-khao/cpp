@@ -6,19 +6,21 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:12:22 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/02/09 09:10:36 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/03/27 15:29:56 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctime>
-#include <iostream>
 #include <sstream>
 #include <cstdlib>
+#include <iostream>
 #include "AForm.hpp"
+#include "Intern.hpp"
 #include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+
 
 std::string intToString(int num){
     std::stringstream ss;
@@ -87,4 +89,33 @@ int main(){
         boss.signForm(robot);
         boss.executeForm(robot);
     }
+    std::cout << "\n=== INTERN TESTS ===" << std::endl;
+	Intern intern;
+
+	AForm* shrub = intern.makeForm("shrubbery creation", "garden");
+	AForm* robot = intern.makeForm("robotomy request", "Bender");
+	AForm* pardon = intern.makeForm("presidential pardon", "Zaphod");
+	AForm* fake = intern.makeForm("fake form", "nothing");
+
+	std::cout << "\n--- Testing forms created by Intern ---" << std::endl;
+	if (shrub) {
+	    boss.signForm(*shrub);
+	    boss.executeForm(*shrub);
+	    delete shrub;
+	}
+	if (robot) {
+	    boss.signForm(*robot);
+	    boss.executeForm(*robot);
+	    delete robot;
+	}
+	if (pardon) {
+	    boss.signForm(*pardon);
+	    boss.executeForm(*pardon);
+	    delete pardon;
+	}
+    if (fake == NULL){
+        std::cout << "il form inesistente e' stato gestito correttamente" << std::endl;
+        (void)fake;
+    }
+// fake è NULL, non fare delete
 }
