@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 15:00:13 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/03/30 18:43:07 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/03/31 15:46:43 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <exception>
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 class ScalarConverter {
 	private:
@@ -26,5 +27,7 @@ class ScalarConverter {
 	public:
 		static void convert(const std::string& literal);
 };
+
+
 
 #endif
