@@ -5,32 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/30 14:59:40 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/04/01 12:06:04 by sel-khao         ###   ########.fr       */
+/*   Created: 2026/04/01 12:31:10 by sel-khao          #+#    #+#             */
+/*   Updated: 2026/04/01 15:47:25 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
 int main(){
-    ScalarConverter::convert("a");
-    ScalarConverter::convert("42");
-    ScalarConverter::convert("'w'");
-    ScalarConverter::convert("+4.2f");
-    std::cout << std::endl;
-    ScalarConverter::convert("4.2fff");
-    std::cout << std::endl;
-    ScalarConverter::convert("nan");
-    std::cout << std::endl;
-    ScalarConverter::convert("+inf");
-    std::cout << std::endl;
-    ScalarConverter::convert("-inf");
+	Data data;
+	
+    Data* originalPtr = &data;
 
+    uintptr_t raw = Serializer::serialize(originalPtr);
+    Data* backPtr = Serializer::deserialize(raw);
+
+    if (originalPtr == backPtr)
+        std::cout << "ok: pointers match" << std::endl;
+    else
+        std::cout << "error: pointers don't match" << std::endl;
+    
     return 0;
 }
-
-/*
-
-char literal in c++
-a literal is a fixed value written directly in source code,
-so anytime i write a value directly, thats a literal.*/

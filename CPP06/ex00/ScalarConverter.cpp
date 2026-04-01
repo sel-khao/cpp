@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 16:10:38 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/03/31 16:51:59 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/04/01 12:07:22 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,37 +103,44 @@ void handle_negative_inff(){
 
 bool pseudo(const std::string& literal){
     if (literal == "nan"){
-        std::cout << "nan found" << std::endl;
         handle_nan();
         return true;
     }
     else if (literal == "+inf"){
-        std::cout << "+inf found" << std::endl;
         handle_positive_inf();
         return true;
     }
     else if (literal == "-inf"){
-        std::cout << "-inf found" << std::endl;
         handle_negative_inf();
         return true;
     }
     else if (literal == "-inff"){
-        std::cout << "-inff found" << std::endl;
         handle_negative_inff();
         return true;
     }
     else if (literal == "+inff"){
-        std::cout << "+inff found" << std::endl;
         handle_positive_inff();
         return true;
     }
     else if (literal == "nanf"){
-        std::cout << "nanf found" << std::endl;
         handle_nanf();
         return true;
     }
     else
         return false;
+}
+
+bool isInt(std::string literal){
+    size_t i = 0;
+    if (literal[i] == '+' || literal[i] == '-')
+        i++;
+    if (i == literal.size())
+        return false;
+    for (; i < literal.size(); i++){
+        if (literal[i] < '0' || literal[i] > '9')
+            return false;
+    }
+    return true;
 }
 
 bool isDouble(std::string literal){
@@ -194,12 +201,16 @@ void ScalarConverter::convert(const std::string& literal){
     if (pseudo(literal))
         return ;//true secial case found and handleed, nothing else to do, otherwise its char/loat/double...
     if (literal.size() == 3 && literal[0] == '\'' && literal[2] == '\''){
+        //char
         char c = literal[1];
         std::cout << "char: '" << c << "'" << std::endl;
+        //int
         int i = c;
         std::cout << "int: " << i << std::endl;
+        //float
         float f = i;
         std::cout << "float: " << f << ".0f" << std::endl;
+        //double
         double d = i;
         std::cout << "double: " << d << ".0" << std::endl;
         return ;
@@ -214,7 +225,7 @@ void ScalarConverter::convert(const std::string& literal){
         else if (i >= 32 && i <= 126)
             std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
         else
-            std::cout << "char: non displayable" << std::endl;
+            std::cout << "char: Non displayable" << std::endl;
         //int
         std::cout << "int: " << i << std::endl;
         //float
@@ -256,7 +267,42 @@ void ScalarConverter::convert(const std::string& literal){
             std::cout << "double: " << d << std::endl;
         return ;
     }
+    else if (isInt(literal)){
+        //string to int
+        long l = std::strtol(literal.c_str(), NULL, 10);
+        int i = static_cast<int>(l);
+        //checking overflow
+        if (l < INT_MIN || l > INT_MAX){
+            std::cout << "char: impossible" << std::endl;
+            std::cout << "int: impossible" << std::endl;
+            std::cout << "float: impossible" << std::endl;
+            std::cout << "double: impossible" << std::endl;
+            return;
+        }
+        //char
+        if (i < 0 || i > 127)
+            std::cout << "char: impossible" << std::endl;
+        else if (i >= 32 && i <= 126)
+            std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
+        else
+            std::cout << "char: Non displayable" << std::endl;
+        //int
+        std::cout << "int: " << i << std::endl;
+        //float;
+        float f = i;
+        if (f == (int)f)
+            std::cout << "float: " << f << ".0f" << std::endl;
+        else
+            std::cout << "float: " << f << "f" << std::endl;
+        //double
+        double d = i;
+        if (d == (int)d)
+            std::cout << "double: " << d << ".0" << std::endl;
+        else
+            std::cout << "double: " << d << std::endl;
+        return ;
+    }
     else
-        std::cout << "something else" << std::endl;
+        std::cout << "no need to handle it" << std::endl;
     return ;
 }
