@@ -5,34 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/02 15:31:58 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/04/18 12:10:14 by sel-khao         ###   ########.fr       */
+/*   Created: 2026/04/18 14:27:26 by sel-khao          #+#    #+#             */
+/*   Updated: 2026/04/18 15:42:44 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#include "MutantStack.hpp"
 
-int main(){
-    //testing with vector
-    std::vector<int> v;
-    v.push_back(1);
-    v.push_back(2);
-    v.push_back(3);
-    v.push_back(4);
-    
-    easyfind(v, 3);
-    
-    try{
-        easyfind(v, 0);
-    } catch (const std::exception &e){
-        std::cout << e.what() << std::endl;
-    }
-    //testing with list
-    std::list<int> l;
-    l.push_back(7);
-    l.push_back(6);
-
-    easyfind(l, 7);
-    
-    return 0;
+int main()
+{
+	MutantStack<int> mstack;
+	
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);	
+	mstack.push(737);
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite){
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::stack<int> s(mstack);
+	
+	return 0;
 }
