@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:45:33 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/04/20 13:55:40 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/05/14 10:48:13 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ class BitcoinExchange{
         BitcoinExchange();
         ~BitcoinExchange();
         BitcoinExchange(const BitcoinExchange& other);
-        BitcoinExchange& operator=(const BitcoinExchange other);
+        BitcoinExchange& operator=(const BitcoinExchange& other);
         void loadDatabase(const std::string& filename);
-        
+        void extractDataFile(const std::string& filename);
+        bool ValidationDate(const std::string& date);
 };
 
 #endif
