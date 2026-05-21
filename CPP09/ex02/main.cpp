@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:06:31 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/05/19 17:07:11 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/05/21 14:32:55 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,21 @@ int main(int argc, char **argv){
             std::cout << vec[i] << " ";
         std::cout << std::endl;
         PmergeMe sorter;
-        std::cout << "vector: ";
+        struct timeval start, end;
+        gettimeofday(&start, NULL);
         sorter.sort(vec);
+        gettimeofday(&end, NULL);
+        long vec_time = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec);
+        std::cout << "Time to process with std::vector: " << vec_time << " us" << std::endl;
         std::cout << "After: ";
         for (size_t i = 0; i < vec.size(); i++)
             std::cout << vec[i] << " ";
         std::cout << std::endl;
-        std::cout << "deque: ";
+        gettimeofday(&start, NULL);
         sorter.sort(deq);
+        gettimeofday(&end, NULL);
+        long deq_time = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_usec - start.tv_usec);
+        std::cout << "Time to process with std::deque: " << deq_time << " us" << std::endl;
         std::cout << "After: ";
         for (size_t i = 0; i < deq.size(); i++)
             std::cout << deq[i] << " ";
