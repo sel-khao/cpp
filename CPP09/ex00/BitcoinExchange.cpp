@@ -6,7 +6,7 @@
 /*   By: sel-khao <sel-khao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:45:07 by sel-khao          #+#    #+#             */
-/*   Updated: 2026/05/14 10:52:08 by sel-khao         ###   ########.fr       */
+/*   Updated: 2026/05/22 16:52:56 by sel-khao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,8 @@ void BitcoinExchange::extractDataFile(const std::string& filename){
 		std::stringstream dataSpace(dateSpace);//passo la stringa con spazi
 		std::string date;
 		dataSpace >> date;//ritorna stringa senza spazi
-		if (!ValidationDate(date)){
+		if (!ValidationDate(date))
 			continue;
-		}
 		std::string strValue = line.substr(pipe + 1);//senza parametro so until end
 		char *endptr;
 		double value = std::strtod(strValue.c_str(), &endptr);
@@ -113,7 +112,7 @@ void BitcoinExchange::extractDataFile(const std::string& filename){
 				--it;
 			}
 			else if (it == database.begin()){
-				std::cerr << "Error: date too old" << std::endl;
+				std::cerr << "Error: date too old => " << date << std::endl;
 				continue;
 			}
 			else
@@ -138,9 +137,8 @@ void BitcoinExchange::loadDatabase(const std::string& filename){
 	std::string line;//"2020-08-20,0.07"
 	while (std::getline(file, line)){
 		size_t virgola = line.find(",");//se find non trova la virgola ritorna std::string::npos(numero speciale)
-		if (virgola == std::string::npos){
+		if (virgola == std::string::npos)
 			continue;
-		}
 		std::string date = line.substr(0, virgola);
 		std::string strValue = line.substr(virgola + 1);//senza parametro so until end
 		double value = std::atof(strValue.c_str());
